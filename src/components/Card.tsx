@@ -4,9 +4,16 @@ import "./Card.css"
 
 type DummyProps = {
   product: Product
+  changeQuantity: (product: Product, quantity: number) => void
 }
 
 const Card = (params: DummyProps) => {
+  const handleButtonClick = () => {
+    const product: Product = params.product
+    const quantity = 1
+    params.changeQuantity(product, quantity)
+  }
+
   return (
     <div className="card">
       <div className="card-content">
@@ -16,7 +23,7 @@ const Card = (params: DummyProps) => {
         <h2 className="card-title">{params.product.title}</h2>
         <p className="card-description">{params.product.description}</p>
         <p className="card-price">{params.product.price}</p>
-        <button>Add to basket</button>
+        <button onClick={handleButtonClick}>Add to basket</button>
       </div>
     </div>
   )

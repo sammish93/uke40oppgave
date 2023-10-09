@@ -1,13 +1,17 @@
-.incrementButton {
+.increment-button {
   background: #03c03c;
 }
 
-.removeButton {
+.remove-button {
   background: Orangered;
 }
 
-.incrementButton,
-.decrementButton,
-.removeButton {
+.increment-button,
+.decrement-button,
+.remove-button {
   width: 30px;
+}
+
+.product-title {
+  text-transform: capitalize;
 }

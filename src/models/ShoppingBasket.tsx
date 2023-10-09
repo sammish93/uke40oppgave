@@ -1,6 +1,9 @@
-import type Product from "./Product"
+import Product from "./Product"
 
 export default class ShoppingBasket {
+  getMap(): Iterable<readonly [Product, number]> | null | undefined {
+    throw new Error("Method not implemented.")
+  }
   basket = new Map<Product, number>()
 
   public constructor(basket: Map<Product, number>) {
@@ -35,5 +38,24 @@ export default class ShoppingBasket {
 
   public countProducts = (): number => {
     return this.basket.size
+  }
+
+  public totalItemPrice = (product: Product): number => {
+    if (this.basket.has(product)) {
+      const quantity: number = this.basket.get(product) ?? 0
+      return product.price * quantity
+    } else {
+      return 0
+    }
+  }
+
+  public totalBasketPrice = (): number => {
+    let totalPrice = 0
+
+    this.basket.forEach((value, key) => {
+      totalPrice += this.totalItemPrice(key)
+    })
+
+    return totalPrice
   }
 }
