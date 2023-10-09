@@ -1,4 +1,5 @@
 import getProducts from "@/domain/functions"
+import Product from "@/models/Product"
 import Card from "./Card"
 
 type DummyProps = {

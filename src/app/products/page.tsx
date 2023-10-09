@@ -20,10 +20,27 @@ const ProductsPage = () => {
     setBasket(updatedBasket)
   }
 
+  const removeProduct = (product: Product) => {
+    const updatedBasket = new ShoppingBasket(new Map(basket.basket))
+    updatedBasket.removeItem(product)
+    setBasket(updatedBasket)
+  }
+
+  const buyBasket = () => {
+    const basketEmptied = basket.purchaseBasket()
+
+    setBasket(new ShoppingBasket(new Map<Product, number>()))
+  }
+
   return (
     <div className="flex justify-center">
       <div className="w-4/5">
-        <ProductCart basket={basket} />
+        <ProductCart
+          basket={basket}
+          changeQuantity={changeQuantity}
+          removeProduct={removeProduct}
+          buyBasket={buyBasket}
+        />
         <ProductList changeQuantity={changeQuantity} />
       </div>
     </div>

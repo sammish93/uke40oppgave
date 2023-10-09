@@ -1,12 +1,16 @@
 import getProducts from "@/domain/functions"
+import Product from "@/models/Product"
 import ShoppingBasket from "@/models/ShoppingBasket"
 import ProductInCart from "./ProductInCart"
 
 type DummyProps = {
   basket: ShoppingBasket
+  changeQuantity: (product: Product, quantity: number) => void
+  removeProduct: (product: Product) => void
+  buyBasket: () => void
 }
 
-const ProductCart = (props: DummyProps) => {
+const ProductCart = (params: DummyProps) => {
   return (
     <div className="flex flex-col space-y-4">
       <div className="flex justify-between">
@@ -15,15 +19,17 @@ const ProductCart = (props: DummyProps) => {
           Close
         </a>
       </div>
-      {Array.from(props.basket.basket.entries()).map(([product, quantity]) => (
+      {Array.from(params.basket.basket.entries()).map(([product, quantity]) => (
         <ProductInCart
           key={product.title}
           product={product}
           quantity={quantity}
+          changeQuantity={params.changeQuantity}
+          removeProduct={params.removeProduct}
         />
       ))}
-      <span>Total: £{props.basket.totalBasketPrice()}.00</span>
-      <button>Buy</button>
+      <span>Total: £{params.basket.totalBasketPrice()}.00</span>
+      <button onClick={params.buyBasket}>Buy</button>
     </div>
   )
 }

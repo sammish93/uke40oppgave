@@ -58,4 +58,12 @@ export default class ShoppingBasket {
 
     return totalPrice
   }
+
+  public purchaseBasket = () => {
+    const basketToReturn = this.basket
+
+    this.basket = new Map<Product, number>()
+
+    return basketToReturn
+  }
 }
