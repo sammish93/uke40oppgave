@@ -1,0 +1,13 @@
+.incrementButton {
+  background: #03c03c;
+}
+
+.removeButton {
+  background: Orangered;
+}
+
+.incrementButton,
+.decrementButton,
+.removeButton {
+  width: 30px;
+}

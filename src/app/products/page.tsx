@@ -1,22 +1,17 @@
 "use client"
 
 import Card from "@/components/Card"
+import ProductCart from "@/components/ProductCart"
 import ProductList from "@/components/ProductList"
 import getProducts from "@/domain/functions"
 
 const ProductsPage = () => {
   return (
-    <div>
-      <ProductList />
-      {getProducts().map((item) => (
-        <Card
-          key={item.title}
-          title={item.title}
-          description={item.description}
-          category={item.category}
-          price={item.price}
-        />
-      ))}
+    <div className="flex justify-center">
+      <div className="w-4/5">
+        <ProductCart />
+        <ProductList />
+      </div>
     </div>
   )
 }

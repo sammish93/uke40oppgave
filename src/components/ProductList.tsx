@@ -1,15 +1,15 @@
 import getProducts from "@/domain/functions"
+import Card from "./Card"
 
 const ProductList = () => {
   return (
-    <ul>
+    <div className="-mx-4 flex flex-wrap">
       {getProducts().map((item) => (
-        <li key={item.title}>
-          Title: {item.title}, Price: {item.price}, Category: {item.category},
-          Description: {item.description}
-        </li>
+        <div key={item.title} className="w-full p-4 sm:w-1/2">
+          <Card key={item.title} product={item} />
+        </div>
       ))}
-    </ul>
+    </div>
   )
 }
 

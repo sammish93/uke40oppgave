@@ -3,10 +3,7 @@ import Product from "@/models/Product"
 import "./Card.css"
 
 type DummyProps = {
-  title: string
-  description: string
-  category: string
-  price: number
+  product: Product
 }
 
 const Card = (params: DummyProps) => {
@@ -14,11 +11,11 @@ const Card = (params: DummyProps) => {
     <div className="card">
       <div className="card-content">
         <div className="card-category-container">
-          <span className="card-category">{params.category}</span>
+          <span className="card-category">{params.product.category}</span>
         </div>
-        <h2 className="card-title">{params.title}</h2>
-        <p className="card-description">{params.description}</p>
-        <p className="card-price">{params.price}</p>
+        <h2 className="card-title">{params.product.title}</h2>
+        <p className="card-description">{params.product.description}</p>
+        <p className="card-price">{params.product.price}</p>
         <button>Add to basket</button>
       </div>
     </div>
