@@ -10,8 +10,7 @@ type DummyProps = {
 const Card = (params: DummyProps) => {
   const handleButtonClick = () => {
     const product: Product = params.product
-    const quantity = 1
-    params.changeQuantity(product, quantity)
+    params.changeQuantity(product, 1)
   }
 
   return (
