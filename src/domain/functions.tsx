@@ -23,8 +23,10 @@ const products = [
   new Product("guinea fowl", "the OG chicken", "livestock", 60.0),
 ]
 
-const getProducts = (): Product[] => {
+export const getProducts = (): Product[] => {
   return products
 }
 
-export default getProducts
+export const addProduct = (product: Product) => {
+  products.push(product)
+}

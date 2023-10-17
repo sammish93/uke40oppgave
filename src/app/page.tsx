@@ -5,9 +5,16 @@ export default function Home() {
         To the /products page
       </a>
       <p>
-        I wasn't able to get the tests running with typescript and my
-        refactoring is a bit of a mess (ended up testing out tailwind half way
-        through).
+        I updated the 'Uke 40' project to take POST requests. I added a form to
+        the products page in which all properties of a product can be entered.
+        You can then click the 'Send a post request' button which adds the
+        Product to the ProductList and then rerenders the ProductList. The
+        insert isn't permanent however, as no database is present in the code.
+      </p>
+      <p>
+        I would be interested to know if I should use .then() after my POST
+        request if my fetch is async and I've used 'await'. See
+        components/PostButton: line 39.
       </p>
     </div>
   )

@@ -4,6 +4,7 @@ import { useState } from "react"
 
 import BasketPopout from "@/components/BasketPopout"
 import Card from "@/components/Card"
+import PostButton from "@/components/PostButton"
 import ProductCart from "@/components/ProductCart"
 import ProductList from "@/components/ProductList"
 import getProducts from "@/domain/functions"
